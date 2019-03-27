@@ -8,16 +8,11 @@ namespace RodentBot
 {
 	class WebSocketConnection
 	{
-		private readonly string link = "wss://push.planetside2.com/streaming?environment=ps2&service-id=s:Stomp";
+		private readonly string _id = ""; //placeholder
 
-		// private readonly string initialMsg = "{\"service\":\"event\",\"action\":\"subscribe\",\"worlds\":[\"10\"],\"eventNames\":[\"PlayerLogin\"]}";
-
-		// private readonly string initialMsg2 = "{\"service\":\"event\",\"action\":\"subscribe\",\"characters\":[\"all\"],\"worlds\":[\"all\"],\"eventNames\":[\"all\"]}";
-
+		private readonly string link;
 		private readonly string initialMsgOnlyAlerts = "{\"service\":\"event\",\"action\":\"subscribe\",\"worlds\":[\"10\"],\"eventNames\":[\"MetagameEvent\"]}";
-
-		// string initialMsgTEST = "{\"service\":\"event\",\"action\":\"subscribe\",\"worlds\":[\"all\"],\"eventNames\":[\"MetagameEvent\"]}";
-
+		
 		private WebSocket ws = null;
 
 		private Timer timer;
@@ -26,6 +21,8 @@ namespace RodentBot
 
 		public WebSocketConnection()
 		{
+			link = $"wss://push.planetside2.com/streaming?environment=ps2&service-id=s:{_id}";
+
 			Connect();
 		
 			SetTimer();
@@ -52,7 +49,7 @@ namespace RodentBot
 			}
 			catch
 			{
-
+				//
 			}
 		}
 
@@ -71,7 +68,7 @@ namespace RodentBot
 				}
 				catch
 				{
-
+					//
 				}
 			}
 		}
@@ -95,19 +92,3 @@ namespace RodentBot
 		}
 	}
 }
-
-// without slashes :
-
-// initialMsg1
-// {"service":"event","action":"subscribe","worlds":["1"],"eventNames":["PlayerLogin"]}
-
-// initialMSg2
-// {"service":"event","action":"subscribe","characters":["all"],"worlds":["all"],"eventNames":["all"]}
-
-//initialMsgOnlyAlerts
-// {"service":"event","action":"subscribe","worlds":["10"],"eventNames":["MetagameEvent"]}
-
-//initialMsgTEST
-// {"service":"event","action":"subscribe","worlds":["10"],"eventNames":["ContinentLock", "ContinentUnlock", "MetagameEvent"]}
-
-

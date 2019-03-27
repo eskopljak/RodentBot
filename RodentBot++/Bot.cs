@@ -11,7 +11,7 @@ namespace RodentBot
 {
 	static class Bot
 	{
-		private const string _token = "NDc5NjYyMjI2NzA2MjY4MTgx.DlcgOQ.8zObDMJKXVfcJ8ZnyMFggGmDuXc";
+		private const string _token = ""; //placeholder
 		
 		private static DiscordClient discord;
 		private static CommandsNextModule commands;
@@ -40,7 +40,7 @@ namespace RodentBot
 			}
 			catch
 			{
-
+				//
 			}
 
 			await Task.Delay(-1);
@@ -54,7 +54,7 @@ namespace RodentBot
 			}
 			catch
 			{
-
+				//
 			}
 		}
 
@@ -84,7 +84,7 @@ namespace RodentBot
 			}
 			catch
 			{
-
+				//
 			}
 		}
 	}

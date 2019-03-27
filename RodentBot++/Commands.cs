@@ -34,11 +34,5 @@ namespace RodentBot
 		{
 			await Bot.Shutdown();
 		}
-
-		[Command("info")]
-		public async Task Info(CommandContext ctx)
-		{
-			await ctx.RespondAsync("StompyMaggot, 2018");
-		}
 	}
 }

@@ -11,9 +11,6 @@ namespace RodentBot
 
 		private static string GetContinent(int id)
 		{
-			// continent id's
-			// Indar - 2, Hossin - 4, Amerish - 6, Esamir - 8
-
 			if ((id <= 158 && id >= 156) || (id <= 134 && id >= 132)) return "Amerish";
 
 			if ((id <= 155 && id >= 153) || (id <= 131 && id >= 129)) return "Hossin";
@@ -73,6 +70,7 @@ namespace RodentBot
 				}
 				catch
 				{
+					//
 				}				
 			}
 
